@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:yes_no_app/widgets/chats/her_chat_bubble.dart';
 import 'package:yes_no_app/widgets/chats/my_chat_bubble.dart';
 import "dart:math";
-
 import 'package:yes_no_app/widgets/shared/message_input_box.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -32,29 +31,6 @@ class ChatScreen extends StatelessWidget {
 }
 
 class _ChatView extends StatelessWidget {
-  final List<String> messages = [
-    "Hello",
-    "How are you?",
-    "I'm fine",
-    "What are you doing?",
-    "I'm coding",
-    "What are you coding?",
-    "I'm coding a chat app",
-    "That's cool",
-    "Yes, it is",
-    "I love coding",
-    "Coding is fun",
-    "Do you code too?",
-    "Yes, I do",
-    "We should code together",
-    "That would be great",
-    "I'm glad you think so",
-    "Let's start coding",
-    "Sure, let's do it",
-    "Coding session begins now",
-    "Excited to code with you",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -84,3 +60,26 @@ class _ChatView extends StatelessWidget {
     );
   }
 }
+
+final List<String> messages = [
+  "Hello",
+  "How are you?",
+  "I'm fine",
+  "What are you doing?",
+  "I'm coding",
+  "What are you coding?",
+  "I'm coding a chat app",
+  "That's cool",
+  "Yes, it is",
+  "I love coding",
+  "Coding is fun",
+  "Do you code too?",
+  "Yes, I do",
+  "We should code together",
+  "That would be great",
+  "I'm glad you think so",
+  "Let's start coding",
+  "Sure, let's do it",
+  "Coding session begins now",
+  "Excited to code with you",
+];
