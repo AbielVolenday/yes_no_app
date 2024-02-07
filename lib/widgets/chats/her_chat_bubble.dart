@@ -1,12 +1,13 @@
 import "package:flutter/material.dart";
 import 'package:shimmer/shimmer.dart';
+import 'package:yes_no_app/domain/entities/messages.dart';
 
 class HerChatBubble extends StatelessWidget {
-  final String text;
+  final ChatMessage message;
 
   const HerChatBubble({
     super.key,
-    required this.text,
+    required this.message,
   });
 
   @override
@@ -22,7 +23,7 @@ class HerChatBubble extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: Text(
-            text,
+            message.text,
             style: const TextStyle(color: Colors.white),
           ),
         ),
