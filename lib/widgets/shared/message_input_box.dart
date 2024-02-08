@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:yes_no_app/providers/chat_provider.dart';
 
 class MessageInputBox extends StatelessWidget {
   const MessageInputBox({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final chatProvider = context.watch<ChatProvider>();
     final inputController = TextEditingController();
     final inputFocusNode = FocusNode();
     final theme = Theme.of(context).colorScheme.primary;
@@ -13,8 +16,9 @@ class MessageInputBox extends StatelessWidget {
         icon: const Icon(Icons.send),
         onPressed: () {
           final text = inputController.value.text;
-          print(text);
+          chatProvider.addMessage(text);
           inputController.clear();
+          inputFocusNode.requestFocus();
         },
       ),
       fillColor: const Color.fromARGB(255, 235, 234, 234),
@@ -36,16 +40,13 @@ class MessageInputBox extends StatelessWidget {
       child: TextFormField(
         onFieldSubmitted: (value) {
           final text = inputController.value.text;
-          print(text);
+          chatProvider.addMessage(text);
           inputController.clear();
-          // inputFocusNode.requestFocus();
+          inputFocusNode.requestFocus();
         },
         decoration: messageInputDecoration,
         controller: inputController,
         focusNode: inputFocusNode,
-        onTapOutside: (event) {
-          inputFocusNode.unfocus();
-        },
       ),
     );
   }
