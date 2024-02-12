@@ -28,7 +28,7 @@ class HerChatBubble extends StatelessWidget {
           ),
         ),
         const Padding(padding: EdgeInsets.only(top: 8.0)),
-        const HerImageBubble(),
+        HerImageBubble(message: message),
         const SizedBox(height: 10),
       ],
     );
@@ -36,16 +36,20 @@ class HerChatBubble extends StatelessWidget {
 }
 
 class HerImageBubble extends StatelessWidget {
-  const HerImageBubble({super.key});
+  final ChatMessage message;
+
+  const HerImageBubble({
+    super.key,
+    required this.message,
+  });
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: Image.network(
-        "https://yesno.wtf/assets/yes/7-653c8ee5d3a6bbafd759142c9c18d76c.gif",
+        message.imageUrl.toString(),
         fit: BoxFit.cover,
         width: size.width * 0.7,
         height: 200,
@@ -53,7 +57,6 @@ class HerImageBubble extends StatelessWidget {
           if (loadingProgress == null) {
             return child;
           }
-
           return Shimmer.fromColors(
               direction: ShimmerDirection.rtl,
               baseColor: const Color.fromARGB(255, 233, 233, 233),

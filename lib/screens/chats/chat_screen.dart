@@ -63,25 +63,3 @@ class _ChatView extends StatelessWidget {
   }
 }
 
-final List<String> messages = [
-  "Hello",
-  "How are you?",
-  "I'm fine",
-  "What are you doing?",
-  "I'm coding",
-  "What are you coding?",
-  "I'm coding a chat app",
-  "That's cool",
-  "Yes, it is",
-  "I love coding",
-  "Coding is fun",
-  "Do you code too?",
-  "Yes, I do",
-  "We should code together",
-  "That would be great",
-  "I'm glad you think so",
-  "Let's start coding",
-  "Sure, let's do it",
-  "Coding session begins now",
-  "Excited to code with you",
-];

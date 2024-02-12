@@ -13,3 +13,4 @@ class ChatMessage {
     this.imageUrl,
   });
 }
+
